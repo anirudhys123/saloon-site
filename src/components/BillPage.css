@@ -1,0 +1,80 @@
+.bill-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 500px;
+   
+    width: 40%;
+    height:auto;
+    border-radius: 50px;
+}
+
+
+
+.bill-page p {
+    margin: 10px 0;
+    .bill-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+}
+
+
+
+.bill-page iframe {
+    margin: 20px auto;
+    display: block;
+    border: none;
+    max-width: 100%;
+}
+
+
+
+
+.booking-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.booking-details p {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.booking-details strong {
+    flex: 0.4;
+    margin-left: -20px;
+    font-size: 25px;
+}
+
+.booking-details span {
+    flex: 1;
+    text-align: right;
+    font-size: 25px;
+}
+
+
+
+
+
+
+
+
+
