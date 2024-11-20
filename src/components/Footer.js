@@ -72,16 +72,16 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="footer-bottom">
-                <p>1900 - 888</p>
-                <div className="social-icons">
-                    <span className="bi bi-linkedin"></span>
-                    <span className="bi bi-facebook"></span>
-                    <span className="bi bi-twitter-x"></span>
-                    <span className="bi bi-youtube"></span>
-                    <span className="bi bi-instagram"></span>
-                </div>
-            </div>
+            // <div className="footer-bottom">
+            //     <p>1900 - 888</p>
+            //     <div className="social-icons">
+            //         <span className="bi bi-linkedin"></span>
+            //         <span className="bi bi-facebook"></span>
+            //         <span className="bi bi-twitter-x"></span>
+            //         <span className="bi bi-youtube"></span>
+            //         <span className="bi bi-instagram"></span>
+            //     </div>
+            // </div>
         </footer>
     );
 };
