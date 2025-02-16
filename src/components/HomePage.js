@@ -13,8 +13,8 @@ const HomePage = () => {
   return (
     <>
       {/* <Header /> */}
-      <div>
-       <img src = {img1} style={{marginTop:'30px',width:'60%',height:'320px'}} />
+      <div >
+       <img src = {img1} alt="Salon Image" style={{marginTop:'30px',width:'80%',height:'300px'}} />
        </div>
        <ImageSlider />
       
