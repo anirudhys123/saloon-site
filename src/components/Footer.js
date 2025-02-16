@@ -57,7 +57,11 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
             
+=======
+           
+>>>>>>> 861aff1e9b75cd0ab5e8dac2f81560cf043d87b2
         </footer>
     );
 };
