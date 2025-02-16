@@ -18,7 +18,8 @@ const AmericanCrew = () => {
         <h2 className="card-title">(For Both Men & Women)</h2>
       </div>
       <div className='card-footer'>
-        <span style={{ fontSize: '25px' }}> Customer Rating: </span>
+        <span style={{ fontSize: '25px',fontWeight:'bold' }}> Customer Rating: </span>
+        <br></br>
         <span className="bi bi-star-fill large-icon"></span>
         <span className="bi bi-star-fill large-icon"></span>
         <span className="bi bi-star-fill large-icon"></span>

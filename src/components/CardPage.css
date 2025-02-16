@@ -1,41 +1,92 @@
 .card-page {
     display: flex;
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
     justify-content: center;
     padding: 10px;
-    height: 60vh; /* Ensure the container takes up the full viewport height */
-    align-items: center; /* Center the cards vertically */
-    margin-top: -50px;
-}
-
-.chair-card {
+    height: auto;
+    align-items: center;
+    margin-top: -20px;
+  }
+  
+  .chair-card {
     border: 1px solid #090707;
     border-radius: 50px;
     padding: 10px;
-    width: 20%;
-    height: 200px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 30%; /* Adjust width for responsiveness */
+    max-width: 300px; /* Prevent cards from becoming too wide */
+    height: auto; /* Allow height to adjust dynamically */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
-    margin: 40px;
+    margin: 20px; /* Adjust spacing between cards */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center the content vertically */
-    align-items: center; /* Center the content horizontally */
-    text-align: center; /* Center the text */
-}
-
-.chair-card:hover {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .chair-card:hover {
     transform: scale(1.05);
-}
-
-.chair-card h1 {
+  }
+  
+  .chair-card h1 {
     margin-bottom: 10px;
-    
-}
-
-.chair-card p {
+    font-size: 1.5rem; /* Adjust font size for responsiveness */
+  }
+  
+  .chair-card p {
     color: #666;
-}
-.image img{
+  }
+  
+  .image img {
     width: 100%;
-    height: 130px;
-}
+    max-height: 130px;
+    object-fit: contain; /* Ensure the image maintains aspect ratio */
+    margin-top: 10px;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 1024px) {
+    .chair-card {
+      width: 45%; /* Adjust to fit two cards per row */
+    }
+  
+    .chair-card h1 {
+      font-size: 1.3rem; /* Reduce font size slightly */
+    }
+  
+    .image img {
+      max-height: 110px; /* Adjust image size for smaller screens */
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .chair-card {
+      width: 80%; /* Single card per row on tablets */
+    }
+  
+    .chair-card h1 {
+      font-size: 1.2rem;
+    }
+  
+    .image img {
+      max-height: 100px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .chair-card {
+      width: 100%; /* Full width for mobile screens */
+      padding: 10px;
+      margin: 10px 0; /* Adjust margin for smaller screens */
+    }
+  
+    .chair-card h1 {
+      font-size: 1rem; /* Smaller font for mobile */
+    }
+  
+    .image img {
+      max-height: 90px; /* Adjust image size for mobile */
+    }
+  }
+  

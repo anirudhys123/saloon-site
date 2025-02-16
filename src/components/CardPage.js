@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './CardPage.css';
 import chair from "../Assets/chair.png";
 import Popup from '../components/Popup';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+// import Header from '../components/Header';
+// import Footer from '../components/Footer';
 
 const CardPage = () => {
     const [showPopup, setShowPopup] = useState(false);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './RazorpayPayment.css'
 
 const RazorpayPayment = ({ amount, bookingDetails, onPaymentSuccess }) => {
   const navigate = useNavigate();
@@ -57,9 +58,9 @@ const RazorpayPayment = ({ amount, bookingDetails, onPaymentSuccess }) => {
   };
 
   return (
-    <button className="btn btn-success" onClick={handlePayment} style={{ backgroundColor: 'green', color: 'white',fontSize:'20px' }}>
-      Pay Now
-    </button>
+    <button className="pay-now-btn" onClick={handlePayment}>
+    Pay Now
+  </button>
   );
 };
 

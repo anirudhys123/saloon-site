@@ -35,21 +35,20 @@ const Services = () => {
     useEffect(() => {
         filterServices(salonType);
 
-        // Set default location and filtered locations based on salonType
         let defaultLocationValue = '';
         let locationsArr = [];
         switch (salonType) {
             case 'men':
                 defaultLocationValue = 'Madhapur';
-                locationsArr = ['Madhapur', 'Gachibowli', 'Banjara Hills']; // Example locations
+                locationsArr = ['Madhapur', 'Gachibowli', 'Banjara Hills'];
                 break;
             case 'women':
                 defaultLocationValue = 'Kondapur';
-                locationsArr = ['Kondapur', 'Hitech City', 'Jubilee Hills']; // Example locations
+                locationsArr = ['Kondapur', 'Hitech City', 'Jubilee Hills'];
                 break;
             case 'both':
                 defaultLocationValue = 'Sainikpuri';
-                locationsArr = ['Sainikpuri', 'Secunderabad', 'Begumpet']; // Example locations
+                locationsArr = ['Sainikpuri', 'Secunderabad', 'Begumpet'];
                 break;
             default:
                 defaultLocationValue = '';
@@ -109,67 +108,53 @@ const Services = () => {
             location: location || defaultLocation,
         };
 
-        // Store the updated booking details in sessionStorage
         sessionStorage.setItem('bookingDetails', JSON.stringify(updatedBookingDetails));
 
-        // Navigate to the Calendar component
         navigate('/calendar');
     };
 
     return (
         <>
-            {/* <Header /> */}
             <section id="services">
                 {logo && <img src={logo} alt={salonName} className="salon-logo" />}
                 <h1>{salonName ? salonName + ' Services' : 'Salon Services'}</h1>
                 {image && <img src={image} alt="Salon Specific" className="salon-specific-image" />}
-                <div className="dropdown-container">
-                    <select id="serviceDropdown" value={selectedService} onChange={handleDropdownChange}>
-                        {salonType === 'men' && <option value="Regis salon">Only for Men</option>}
-                        {salonType === 'women' && <option value="American Crew">Only for Women</option>}
-                        {salonType === 'both' && <option value="Tony & Guy">For both Men and Women</option>}
+
+                {/* Grouped Location Section */}
+                <div className="location-container">
+                    <FaLocationDot className="location-icon" />
+                    <span className="location-text">Location</span>
+                    <select
+                        value={bookingDetails.location || defaultLocation}
+                        onChange={(event) => {
+                            setBookingDetails((prevDetails) => ({
+                                ...prevDetails,
+                                location: event.target.value,
+                            }));
+                            setSelectedLocation(event.target.value);
+                        }}
+                    >
+                        {filteredLocations.map((location, index) => (
+                            <option key={index} value={location}>{location}</option>
+                        ))}
                     </select>
-                    <FaLocationDot style={{ fontSize: '30px', position: 'absolute', left: '-30px',top:'7px' }} />
-                    <div className="location">
-                       
-                    <span style={{position:'absolute',right:'50px',margin:'10px',top:'-5px',fontSize:'25px'}}>Saloon Location</span> 
-                     <select
-                            value={bookingDetails.location || defaultLocation}
-                            onChange={(event) => {
-                                setBookingDetails((prevDetails) => ({
-                                    ...prevDetails,
-                                    location: event.target.value,
-                                }));
-                                setSelectedLocation(event.target.value);
-                            }}
-                        >
-                            {filteredLocations.map((location, index) => (
-                                <option key={index} value={location}>{location}</option>
-                            ))}
-                        </select>
-                    </div>
                 </div>
+
                 <div className="services-container">
                     {filteredServices.map((service) => (
                         <div key={service.id} className="service-card">
                             <img src={service.image} alt={service.title} />
                             <h3>{service.title}</h3>
                             <p>{service.description}</p>
-                            <p>
-                                <strong>Price:</strong> ₹{service.price}
-                            </p>
-                            <button
-                                type="button"
-                                className="btn btn-primary"
-                                onClick={() => handleBookSlot(service.title, service.price, bookingDetails.location)}
-                            >
+                            <p><strong>Price:</strong> ₹{service.price}</p>
+                            <button type="button" className="btn btn-primary"
+                                onClick={() => handleBookSlot(service.title, service.price, bookingDetails.location)}>
                                 Book Slot
                             </button>
                         </div>
                     ))}
                 </div>
             </section>
-            {/* <Footer /> */}
         </>
     );
 };

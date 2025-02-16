@@ -1,0 +1,39 @@
+/* Base styling for Pay Now Button (Desktop & default) */
+.pay-now-btn {
+    background-color: green;  /* Existing color */
+    color: white;             /* Existing color */
+    font-size: 20px;          /* Base font size */
+    padding: 12px 20px;       /* Base padding */
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100px;       /* Maximum width on desktop */
+    margin: 0 auto;           /* Centered horizontally */
+    display: block;
+  }
+  
+  .pay-now-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+  
+  /* Mobile Devices (Max-width: 768px) - Compact Button */
+  @media (max-width: 768px) {
+    .pay-now-btn {
+      font-size: 35px;       /* Reduced font size */
+      padding: 6px 10px;     /* Reduced padding for a smaller appearance */
+      width: 100px;    
+      height: 80px;  /* Smaller maximum width on mobile */
+    }
+  }
+  
+  /* Extra Small Devices (Max-width: 480px) - Even More Compact */
+  @media (max-width: 480px) {
+    .pay-now-btn {
+      font-size: 14px;       /* Further reduced font size */
+      padding: 4px 8px;      /* Further reduced padding */
+      max-width: 180px;      /* Even smaller maximum width */
+    }
+  }
+  

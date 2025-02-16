@@ -5,19 +5,11 @@
 }
 
 .dropdown-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 24px;
-}
-
-.location select,
-#serviceDropdown {
-  width: 100%;
-  padding: 10px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
+  align-items: center;
 }
 
 .services-container {
@@ -40,8 +32,11 @@
 }
 
 .service-card img {
-  max-width: 100%;
-  border-radius: 8px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+  border-radius: 45px;
 }
 
 .service-card h3 {
@@ -64,206 +59,123 @@
   transform: scale(1.05);
 }
 
-
-/* Modal fade */
+/* Modal Styling */
 .modal.fade {
-    display: none;
-    transition: opacity 0.15s linear;
-  }
-  
-  /* Modal dialog */
-  .modal-dialog {
-    max-width: 600px;
-    margin: 1.75rem auto;
-  }
-  
-  /* Modal content */
-  .modal-content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 0.3rem;
-    outline: 0;
-    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
-  }
-  
-  /* Modal header */
-  .modal-header {
-    display: flex;
-    align-items: left;
-    justify-content: space-between;
-    padding: 1rem 1rem;
-    font-size: 25px;
-    border-bottom: 1px solid #dee2e6;
-    border-top-left-radius: calc(0.3rem - 1px);
-    border-top-right-radius: calc(0.3rem - 1px);
-  }
-  
-  /* Modal title */
-  .modal-title {
-    margin-bottom: 0;
-    line-height: 1.5;
-    font-weight: bold;
-  }
-  
-  /* Close button */
-  .btn-close {
-    padding: 0.25rem 0.5rem;
-    margin: -0.25rem -0.5rem -0.25rem auto;
-    background: none;
-    border: 0;
-    
-  }
-  
-  /* Modal body */
-  .modal-body {
-    position: relative;
-    flex: 1 1 auto;
-    padding: 1rem;
-  }
-  
-  /* Input field */
-  .modal-body input[type="text"] {
-    width: 100%;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #0e0f10;
-    border-radius: 0.25rem;
-    margin-bottom: 1rem;
-  }
-  
-  /* Select field */
-  .modal-body select {
-    width: 100%;
-    padding: 0.375rem 0.75rem;
-    font-size: 1.3rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #07090b;
-    border-radius: 0.25rem;
-    margin-bottom: 1rem;
-  }
-  
-  /* Modal footer */
-  .modal-footer {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0.75rem;
-    border-top: 1px solid #dee2e6;
-    border-bottom-right-radius: calc(0.3rem - 1px);
-    border-bottom-left-radius: calc(0.3rem - 1px);
-  }
-  
-  /* Buttons */
-  .modal-footer .btn {
-    margin-left: 0.5rem;
-  }
-  input[type="date"] {
-    width: 100%;
-    box-sizing: border-box; /* Includes padding and border in the element's total width */
-    padding: 0.375rem 0.75rem; /* Adds padding for better appearance */
-    font-size: 1rem; /* Adjusts the font size */
-    font-weight: 400; /* Sets the font weight */
-    border: 1px solid #ced4da; /* Adds a border */
-    border-radius: 0.25rem; /* Rounds the corners */
-    background-color: #fff; /* Sets the background color */
-    color: #495057; /* Sets the text color */
-    outline: none; /* Removes the outline on focus */
-  }
-  .service-card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-bottom: 1px solid #ddd;
-    border-radius: 45px;
-  }
-  /* Container for the dropdown */
-.dropdown-container {
-  
-  position: absolute;
-  top: 20px; /* Adjust top position as needed */
-  right: 20px; /* Adjust right position as needed */
+  display: none;
+  transition: opacity 0.15s linear;
+}
+
+.modal-dialog {
+  max-width: 600px;
+  margin: 1.75rem auto;
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  font-size: 25px;
+  border-bottom: 1px solid #dee2e6;
+  border-top-left-radius: calc(0.3rem - 1px);
+  border-top-right-radius: calc(0.3rem - 1px);
+}
+
+.modal-title {
+  margin-bottom: 0;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+.btn-close {
+  padding: 0.25rem 0.5rem;
+  margin: -0.25rem -0.5rem -0.25rem auto;
+  background: none;
+  border: 0;
+}
+
+.modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  padding: 1rem;
+}
+
+.modal-body input[type="text"],
+.modal-body select,
+input[type="date"] {
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  border: 1px solid #0e0f10;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.modal-footer {
   display: flex;
   align-items: center;
-}
-.location {
-  position: relative;
-  width: 250px; /* Adjust width as needed */
-  margin-right: 350px; /* Optional: Add margin for separation */
-  
+  justify-content: flex-end;
+  padding: 0.75rem;
+  border-top: 1px solid #dee2e6;
+  border-bottom-right-radius: calc(0.3rem - 1px);
+  border-bottom-left-radius: calc(0.3rem - 1px);
 }
 
-/* Styling the select element */
-.location select {
+.modal-footer .btn {
+  margin-left: 0.5rem;
+}
+
+/* Location Container - Newly Grouped */
+.location-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
   width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+/* Icon for Location */
+.location-container .location-icon {
+  font-size: 30px;
+  color: #333;
+}
+
+/* Text for Location */
+.location-container .location-text {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* Dropdown for Location */
+.location-container select {
+  width: 70%;
   padding: 8px 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  appearance: none; /* Remove default arrow */
-  background-color: #fff;
   font-size: 20px;
+  background-color: #fff;
   cursor: pointer;
-  margin-left: 200px;
-}
- .location p{
-  font-weight: bold;
-  margin-top: 20px;
-  font-size: 20px;
 }
 
-/* Styling the arrow
-.location::after {
-  content: '\25BC'; 
-  position: absolute;
-  top: 15%; 
-  right: 12px; 
-  transform: translateY(-40%); 
-  
-} */
-
-
-
-/* Label for the dropdown */
-.dropdown-container label {
-  margin-bottom: 10px;
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-}
-
-
-#serviceDropdown {
-  width: 380px;
-  height: 50px;
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 20px;
-  background-color: #fff;
-  transition: border-color 0.3s ease;
-  display: none;
-}
-
-/* #serviceDropdown:focus {
-  border-color: #007bff;
-  outline: none;
-}
-
-#serviceDropdown option {
-  padding: 12px;
-} */
+/* Salon Logo */
 .salon-logo {
   display: block;
   margin: 10px auto;
@@ -271,14 +183,10 @@
   height: auto;
 }
 
+/* Salon Specific Image */
 .salon-specific-image {
   display: block;
   margin: 20px auto;
   max-width: 400px;
   height: auto;
 }
-
-
-
-  
-  

@@ -41,7 +41,7 @@ const BillPage = () => {
             ></iframe>
             <div className="bill-page">
                 <h1 style={{ fontSize: '30px', marginTop: '7px' }}>Booking Details</h1>
-                <div className="booking-details">
+                <div className="booking-details" style={{ marginLeft: '50px', width:'100%' }}>
                     <p><strong>Salon:</strong> <span>{salonName}</span></p>
                     <p><strong>Location:</strong> <span>{location}</span></p>
                     <p><strong>Date:</strong> <span>{displayDate}</span></p>
