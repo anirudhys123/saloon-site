@@ -28,7 +28,7 @@ const RazorpayPayment = ({ amount, bookingDetails, onPaymentSuccess }) => {
     }
 
     const options = {
-      key: 'rzp_test_k3e3fimeByvpbP',
+      key: 'rzp_test_9VqSlFsO3x2pPm',
       amount: amount * 100,
       currency: 'INR',
       name: bookingDetails.salonName,
